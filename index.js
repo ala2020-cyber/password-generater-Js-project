@@ -52,7 +52,6 @@ function generate4Password() {
 
 function copyToclipboard(passToCopy) {
     navigator.clipboard.writeText(passToCopy.value)
-    alert("password copied successfuly")
 }
 
 function copyPassword1(){
