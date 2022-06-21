@@ -168,7 +168,7 @@ input, .PasswordField {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--output-color);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -184,18 +184,18 @@ input, .PasswordField {
   bottom: 0;
   margin: auto 0;
   transition: 0.4s ease-out;
-  background: white url('https://i.ibb.co/FxzBYR9/night.png') center no-repeat;
+  background: white url('https://i.ibb.co/7JfqXxB/sunny.png') center no-repeat;
 }
 
 input:checked + .slider {
-  background-color: var(--output-color);
+  background-color: #ccc;
 }
 
 
 
 input:checked + .slider:before {
   transform: translateX(25px);
-  background: white url('https://i.ibb.co/7JfqXxB/sunny.png') center no-repeat;
+  background: white url('https://i.ibb.co/FxzBYR9/night.png') center no-repeat;
 }
 
 /* Rounded sliders */
