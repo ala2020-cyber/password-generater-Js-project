@@ -15,7 +15,7 @@ let btnClicked=false
 const message = document.getElementById("message");
 const cardBtn = document.getElementById("cardBtn");
 const passwordsOutput = document.getElementsByClassName("PasswordField");
-const themeBtn = document.getElementById("themeBtn")
+const slider = document.getElementById("slider")
 
 const emptyInputFields = () => {
   for (let field of passwordsOutput) {
@@ -139,4 +139,4 @@ const toggleTheme = () => {
   }
 })();
 
-themeBtn.addEventListener("click", toggleTheme) 
+slider.addEventListener("change", toggleTheme) 
