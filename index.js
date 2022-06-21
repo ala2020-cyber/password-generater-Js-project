@@ -133,9 +133,11 @@ const toggleTheme = () => {
 (() => {
   if(localStorage.getItem("theme") === "theme-dark"){
     setTheme("theme-dark")
+    slider.checked=true
   }
   else {
     setTheme("theme-ligth")
+    slider.checked=false
   }
 })();
 
