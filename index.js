@@ -15,7 +15,7 @@ let btnClicked=false
 const message = document.getElementById("message");
 const cardBtn = document.getElementById("cardBtn");
 const passwordsOutput = document.getElementsByClassName("PasswordField");
-
+const themeBtn = document.getElementById("themeBtn")
 
 const emptyInputFields = () => {
   for (let field of passwordsOutput) {
@@ -62,7 +62,7 @@ const generate4Password = () => {
     message.textContent = "";
     inputLength.value = "";
     emptyInputFields();
-    message.textContent=`Length should be bettwen 8 and 19 !`
+    message.textContent=`Length should be between 8 and 19 !`
     message.style.color="red"
   }
   
@@ -99,13 +99,44 @@ const CopyToClipboard = (elem) => {
 };
 
 
-    for( let i of passwordsOutput){
-        i.addEventListener("click",()=> {
-            if(btnClicked){
-                CopyToClipboard(i)
-                i.firstChild.textContent="Copied !"
-                
-            }
-        })
-        
+for( let i of passwordsOutput){
+    i.addEventListener("click",()=> {
+        if(btnClicked){
+            CopyToClipboard(i)
+            i.firstChild.textContent="Copied !"
+            
+        }
+    })
+    
+}
+
+
+
+const setTheme = themeName => {
+   
+  localStorage.setItem("theme",themeName)
+  document.documentElement.className= themeName
+  
+}
+
+
+const toggleTheme = () => {
+    const themeInLocalStorage = localStorage.getItem("theme") 
+    if(themeInLocalStorage === "theme-dark"){
+      setTheme("theme-ligth")
     }
+    else {
+      setTheme("theme-dark")
+    }
+} 
+
+(() => {
+  if(localStorage.getItem("theme") === "theme-dark"){
+    setTheme("theme-dark")
+  }
+  else {
+    setTheme("theme-ligth")
+  }
+})();
+
+themeBtn.addEventListener("click", toggleTheme) 
